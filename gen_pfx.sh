@@ -11,10 +11,10 @@ function gen_server() {
 	### SAN
 	san_extension=${common_name}.ext
 	cat >${san_extension} <<-EOF
-		        authorityKeyIdentifier=keyid,issuer
-		        basicConstraints=CA:FALSE
-		        keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-		        subjectAltName = DNS:${domain_name}
+		authorityKeyIdentifier=keyid,issuer
+		basicConstraints=CA:FALSE
+		keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+		subjectAltName = DNS:${domain_name}
 	EOF
 
 	private_key=${common_name}_key.pem
